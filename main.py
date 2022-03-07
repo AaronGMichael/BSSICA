@@ -6,3 +6,5 @@ if __name__ == '__main__':
     #figplot()
     #two_channelip()
     splitsong()
+
+#uncomment file to run
