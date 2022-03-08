@@ -107,7 +107,7 @@ def mix_sources(mixtures, apply_noise=False):
     return X
 
 def splitsong():
-    stereo_audio = AudioSegment.from_file("Resources/StrTru1Mix.wav", format="wav")
+    stereo_audio = AudioSegment.from_file("Resources/song.wav", format="wav")
 
     # Calling the split_to_mono method
     # on the stereo audio file
@@ -127,5 +127,5 @@ def splitsong():
     X = mix_sources([mix1, mix2])
     S = ica(X, iterations=1000)
     #plot_mixture_sources_predictions(X, [mono_left, mono_right], S)
-    wavfile.write('Resources/Outputs/StrTrusplit1.wav', sampling_rate, S[0])
-    wavfile.write('Resources/Outputs/StrTrusplit2.wav', sampling_rate, S[1])
+    wavfile.write('Resources/Outputs/split1.wav', sampling_rate, S[0])
+    wavfile.write('Resources/Outputs/split2.wav', sampling_rate, S[1])
