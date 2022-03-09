@@ -124,4 +124,3 @@ def figplot():
     X = X.T
     S = ica(X, iterations=1000)
     plot_mixture_sources_predictions(X, [s1, s2, s3], S)
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
