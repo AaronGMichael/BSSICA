@@ -9,7 +9,7 @@ if __name__ == '__main__':
     #two_channelip()
     #splitsong()
     #correlationplotgen()
-    #corrplot()
-    splitsong2sig()
+    corrplot()
+    #splitsong2sig()
 
 #uncomment file to run
