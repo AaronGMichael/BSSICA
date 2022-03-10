@@ -113,5 +113,5 @@ def two_channelip():
     X = mix_sources([mix1, mix2])
     S = ica(X, iterations=1000)
     plot_mixture_sources_predictions(X, [source1, source2], S)
-    wavfile.write('Resources/Outputs/out1.wav', sampling_rate, S[0])
-    wavfile.write('Resources/Outputs/out2.wav', sampling_rate, S[1])
+    #wavfile.write('Resources/Outputs/out1.wav', sampling_rate, S[0])
+    #wavfile.write('Resources/Outputs/out2.wav', sampling_rate, S[1])
