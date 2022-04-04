@@ -107,7 +107,8 @@ def mix_sources(mixtures, apply_noise=False):
     return X
 
 def splitsong():
-    stereo_audio = AudioSegment.from_file("Resources/song.wav", format="wav")
+    src="Bss_SomeoneLikeYou_Mix1.wav"
+    stereo_audio = AudioSegment.from_file("Resources/"+src, format="wav")
 
     # Calling the split_to_mono method
     # on the stereo audio file
@@ -117,15 +118,15 @@ def splitsong():
     # audio files present at index 0(left)
     # and index 1(right) of list returned
     # by split_to_mono method
-    mono_left = mono_audios[0].export("Resources/temp/mono_left.wav", format="wav")
-    mono_right = mono_audios[1].export("Resources/temp/mono_right.wav", format="wav")
-    sampling_rate, mix1 = wavfile.read('Resources/temp/mono_left.wav')
-    sampling_rate, mix2 = wavfile.read('Resources/temp/mono_right.wav')
+    mono_left = mono_audios[0].export("Resources/temp/mono_left" + src + ".wav", format="wav")
+    mono_right = mono_audios[1].export("Resources/temp/mono_right" + src + ".wav", format="wav")
+    sampling_rate, mix1 = wavfile.read("Resources/temp/mono_left" + src + ".wav")
+    sampling_rate, mix2 = wavfile.read("Resources/temp/mono_right" + src + ".wav")
 
     # sampling_rate, source1 = wavfile.read('source1.wav')
     # sampling_rate, source2 = wavfile.read('source2.wav')
     X = mix_sources([mix1, mix2])
     S = ica(X, iterations=1000)
     #plot_mixture_sources_predictions(X, [mono_left, mono_right], S)
-    wavfile.write('Resources/Outputs/split1.wav', sampling_rate, S[0])
-    wavfile.write('Resources/Outputs/split2.wav', sampling_rate, S[1])
+    wavfile.write("Resources/Outputs/split_" + src + "0.wav", sampling_rate, S[0])
+    wavfile.write("Resources/Outputs/split_" + src + "1.wav", sampling_rate, S[1])

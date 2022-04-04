@@ -10,8 +10,8 @@ if __name__ == '__main__':
     #two_channelip()
     #splitsong()
     #correlationplotgen()
-    #corrplot()
+    corrplot()
     #splitsong2sig()
-    dual_chnl_corrplot()
+    #dual_chnl_corrplot()
 
 #uncomment file to run

@@ -26,9 +26,12 @@ def dual_chnl_corrplot():
     mono_audios_target = stereo_audio_target.split_to_mono()
     mono_left_target = mono_audios_target[0].export("Resources/temp/mono_left_target.wav", format="wav")
     mono_right_target = mono_audios_target[0].export("Resources/temp/mono_right_target.wav", format="wav")
-    SOURCE_FILE1_temp, sampling_rate = sf.read("Resources/temp/mono_left_source.wav")
+    SOURCE_FILE1, sampling_rate = sf.read("Resources/temp/mono_left_source.wav")
     TARGET_FILE1, sampling_rate2 = sf.read("Resources/temp/mono_left_target.wav")
-    SOURCE_FILE1 = SOURCE_FILE1_temp[0, len(TARGET_FILE1) - 1]
+    for _ in TARGET_FILE1.len() - SOURCE_FILE1.len():
+        SOURCE_FILE1.append(0)
+
+    #SOURCE_FILE1 = SOURCE_FILE1_temp[0, len(TARGET_FILE1) - 1]
     plot_corr_with_freq(SOURCE_FILE1, TARGET_FILE1, sampling_rate, sampling_rate2, 0)
     SOURCE_FILE2, sampling_rate = sf.read("Resources/temp/mono_right_source.wav")
     TARGET_FILE2, sampling_rate2 = sf.read("Resources/temp/mono_right_target.wav")
