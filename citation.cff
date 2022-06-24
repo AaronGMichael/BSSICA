@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Michael"
+  given-names: "Aaron George"
+- family-names: "Antony"
+  given-names: "Alan"
+- family-names: "Antony"
+  given-names: "Roshan"
+- family-names: "Warriar"
+  given-names: "Abhiram Vijayakumar"
+- family-names: "Rafeek"
+  given-names: "Adil"
+title: "BSS-ICA"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2022-06-24
+url: "https://github.com/AaronGMichael/BSSICA"
